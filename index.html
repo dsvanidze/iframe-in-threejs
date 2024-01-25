@@ -47,7 +47,7 @@
 			let camera, scene, renderer;
 			let controls;
 
-			function Element( id, x, y, z, ry ) {
+			function Element( src, x, y, z, ry ) {
 
 				const div = document.createElement( 'div' );
 				div.style.width = '480px';
@@ -58,7 +58,8 @@
 				iframe.style.width = '480px';
 				iframe.style.height = '360px';
 				iframe.style.border = '0px';
-				iframe.src = [ 'https://www.youtube.com/embed/', id, '?rel=0' ].join( '' );
+				// iframe.src = [ 'https://www.youtube.com/embed/', id, '?rel=0' ].join( '' );
+                iframe.src = src
 				div.appendChild( iframe );
 
 				const object = new CSS3DObject( div );
@@ -91,11 +92,11 @@
 				// group.add( new Element( 'IrydklNpcFI', 0, 0, - 240, Math.PI ) );
 				// group.add( new Element( '9ubytEsCaS0', - 240, 0, 0, - Math.PI / 2 ) );
 
-                group.add( new Element( 'SJOz3qjfQXU', 0, 1, 240, 0 ) );
-				group.add( new Element( 'Y2-xZ-1HE-Q', 370, 1, 440, -1 ) );
-				group.add( new Element( '9ubytEsCaS0', - 370, 1, 440, 1 ) );
-				group.add( new Element( 'IrydklNpcFI', 0, 361, 240, 0 ) );
-				group.add( new Element( 'duhHk_Tnt0I', 0, - 361, 240, 0 ) );
+                group.add( new Element( 'https://www.youtube.com/embed/SJOz3qjfQXU?si=fhe9XTrF31XV2GzV', 0, 0, 240, 0 ) );
+				group.add( new Element( 'https://www.youtube.com/embed/Y2-xZ-1HE-Q?si=m-b-emK6DLwj7EjH', 370, 0, 440, -1 ) );
+				group.add( new Element( 'https://www.youtube.com/embed/9ubytEsCaS0?si=g8SfDm65Lmp1p2AJ', - 370, 0, 440, 1 ) );
+				group.add( new Element( 'https://www.youtube.com/embed/IrydklNpcFI?si=hAs_OqOKe4_81sHQ', 0, 360, 240, 0 ) );
+				group.add( new Element( 'https://www.youtube.com/embed/duhHk_Tnt0I?si=IwJ4Oho-NN3sXByB', 0, - 360, 240, 0 ) );
 				scene.add( group );
 
 				controls = new TrackballControls( camera, renderer.domElement );
